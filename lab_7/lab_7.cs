@@ -13,14 +13,14 @@ namespace lab_7
             Console.WriteLine("Please enter your full name :");
             string name = Console.ReadLine();
 
-            bool regexvar = Regex.IsMatch(name, @"^[a-zA-Z]+(([a-zA-Z ])?[a-zA-Z]*)*$");
+            bool regexvar = Regex.IsMatch(name, @"\b([A-Z][a-z]{1,30})\b");
             if (regexvar)
             {
                 Console.WriteLine("Thanks you for inputing your name :");
             }
             else
             {
-                Console.WriteLine("please enter a valid full name. first, middle, and last.. Use singe space");
+                Console.WriteLine("please enter a valid full name.");
             }
             return regexvar;
         }
@@ -29,7 +29,7 @@ namespace lab_7
         {
             Console.WriteLine("Please enter a valid e-mail :");
             string name1 = Console.ReadLine();
-            bool regevar1 = Regex.IsMatch(name1, @"/([0-9a-zA-Z]{5,30}) + (@)([0-9a-zA-Z]{5,10})(\.)([0-9a-z]){2,3}");
+            bool regevar1 = Regex.IsMatch(name1, @"/([0-9a-zA-Z]{5,30})+(@)+([0-9a-zA-Z]{5,10})(\.)([0-9a-z]){2,3}");
             if (regevar1 == true)
             {
                 Console.WriteLine("Email is Valid");
